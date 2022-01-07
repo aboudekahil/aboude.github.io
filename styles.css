@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --barColor: #e8e6e3;
+}
+* {
+  transition: all .1s ease-in-out;
+}
+
+
 html,
 body {
   margin: 0;
@@ -16,31 +25,83 @@ body {
   background-color: #181a1b;
   color: #e8e6e3;
   font-family: 'Roboto', sans-serif;
+}
+
+i {
+  font-weight: 100;
+  color: #e8e6e3;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+section {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.ilist {
-  padding: 0;
-}
+@media only screen and (min-width: 600px) {
+  ul {
+    list-style: none;
+  }
 
-.ilist li {
-  display: inline-block;
-  padding: 8px;
-  font-size: 150%;
+  #contact {
+    margin: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  #contact-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .contact-item {
+    padding: 8px;
+    font-size: 125%;
+  }
+  .contact-item:hover {
+    transform: translateY(-3px);
+  }
+
+  #contact-list:first-child::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 9px;
+    margin: 0px auto;
+    background-color: #e8e6e3;
+  }
+
+  #contact-list:last-child::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: var(--barColor);
+  }
 }
-.fa-github {
+li:hover .fa-github-alt {
   color: #8f36b7;
 }
-.fa-instagram {
+li:hover .fa-instagram {
   color: #bb2ba2;
 }
-.fa-linkedin {
+li:hover .fa-linkedin-in {
   color: #0077b5;
 }
 
-.fa-envelope {
+li:hover .fa-envelope {
   color: #ea4335;
 }
