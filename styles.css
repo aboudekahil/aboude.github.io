@@ -28,11 +28,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   background-color: var(--backgroundColor);
   width: 7px;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #262829;
   border-radius: 20px;
 }
@@ -68,9 +68,13 @@ header {
   height: 100px;
   backdrop-filter: blur(10px);
 }
-
-#logo text {
-  fill: var(--barColor);
+svg {
+  transition: all 0.1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  user-select: none;
+}
+svg:hover {
+  cursor: pointer;
+  transform: scale(115%, 115%);
 }
 
 @media only screen and (min-width: 600px) {
