@@ -1,3 +1,4 @@
+// method to get value of a css property
 const getCssPropertyForRule = (rule, prop) => {
   let sheets = document.styleSheets;
   let slen = sheets.length;
@@ -12,6 +13,7 @@ const getCssPropertyForRule = (rule, prop) => {
   }
 };
 
+// icon color change
 document.querySelectorAll('#contact-list > a > li').forEach((item) => {
   item.addEventListener('mouseenter', () => {
     // console.log('li:hover .' + item.firstElementChild.classList[1]);
@@ -26,4 +28,9 @@ document.querySelectorAll('#contact-list > a > li').forEach((item) => {
   item.addEventListener('mouseleave', () => {
     document.querySelector(':root').style.setProperty('--barColor', '#e8e6e3');
   });
+});
+
+// wip
+document.querySelector('#wip').addEventListener('click', () => {
+  document.querySelector('#wip').innerHTML = 'not yet';
 });

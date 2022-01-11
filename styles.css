@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 :root {
   --barColor: #e8e6e3;
   --backgroundColor: #181a1b;
+  --triangle-angle: 45deg;
+  --triangle-length: 37vw;
+  --aboude-width: none;
 }
 * {
   transition: all 0.15s ease-in-out;
@@ -25,7 +26,8 @@ body {
   left: 0;
   background-color: var(--backgroundColor);
   color: #e8e6e3;
-  font-family: 'Roboto', sans-serif;
+  font-family: Calibre, Inter, 'San Francisco', 'SF Pro Text', -apple-system,
+    system-ui, sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +35,7 @@ body {
   width: 7px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #262829;
+  background-color: var(--barColor);
   border-radius: 20px;
 }
 
@@ -71,10 +73,26 @@ header {
 svg {
   transition: all 0.1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   user-select: none;
+  -webkit-filter: drop-shadow(0px 0px 2px var(--barColor));
+  filter: drop-shadow(0px 0px 2px var(--barColor));
 }
 svg:hover {
   cursor: pointer;
   transform: scale(115%, 115%);
+}
+
+#aboude {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: .11rem;
+}
+
+#aboude img {
+  border-radius: 50%;
+  width: 5rem;
 }
 
 @media only screen and (min-width: 600px) {
@@ -121,6 +139,7 @@ svg:hover {
     height: 90px;
     margin: 0px auto;
     background-color: var(--barColor);
+    box-shadow: 0 0 5px 1px var(--barColor);
   }
 }
 
@@ -155,6 +174,7 @@ nav ul a li:hover {
 nav ul a li::before {
   color: var(--barColor);
   font-family: monospace;
+  text-shadow: 0 0 5px var(--barColor);
 }
 
 nav ul a:nth-child(1) li::before {
@@ -181,18 +201,39 @@ nav ul a:nth-child(4) li::before {
   background-color: var(--barColor);
   position: absolute;
   top: 50%;
+  box-shadow: 0 0 5px 1px var(--barColor);
 }
 
 li:hover .fa-github-alt {
   color: #8f36b7;
+  -webkit-filter: drop-shadow(0px 0px 2px var(--barColor));
+  filter: drop-shadow(0px 0px 2px var(--barColor));
 }
 li:hover .fa-instagram {
   color: #bb2ba2;
+  -webkit-filter: drop-shadow(0px 0px 2px var(--barColor));
+  filter: drop-shadow(0px 0px 2px var(--barColor));
 }
 li:hover .fa-linkedin-in {
   color: #0077b5;
+  -webkit-filter: drop-shadow(0px 0px 2px var(--barColor));
+  filter: drop-shadow(0px 0px 2px var(--barColor));
 }
 
 li:hover .fa-envelope {
   color: #ea4335;
+  -webkit-filter: drop-shadow(0px 0px 2px var(--barColor));
+  filter: drop-shadow(0px 0px 2px var(--barColor));
+}
+
+#wip{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  margin: 10px;
+  background-color: #e8e6e344;
+  border-radius: 5px;
+  user-select: none;
+  font-family: monospace;
 }
