@@ -16,12 +16,10 @@ const getCssPropertyForRule = (rule, prop) => {
 // icon color change
 document.querySelectorAll('#contact-list > a > li').forEach((item) => {
   item.addEventListener('mouseenter', () => {
-    // console.log('li:hover .' + item.firstElementChild.classList[1]);
     let color = getCssPropertyForRule(
       'li:hover .' + item.firstElementChild.classList[1],
       'color'
     );
-    // console.log(color);
     document.querySelector(':root').style.setProperty('--barColor', color);
   });
 
