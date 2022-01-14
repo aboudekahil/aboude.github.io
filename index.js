@@ -28,6 +28,14 @@ document.querySelectorAll('#contact-list > a > li').forEach((item) => {
   });
 });
 
+document.querySelector('.links').addEventListener('mouseenter', () => {
+  document.querySelector('#balamand').style.opacity = 1;
+});
+
+document.querySelector('.links').addEventListener('mouseleave', () => {
+  document.querySelector('#balamand').style.opacity = 0;
+});
+
 // wip
 document.querySelector('#wip').addEventListener('click', () => {
   document.querySelector('#wip').innerHTML = 'not yet';
