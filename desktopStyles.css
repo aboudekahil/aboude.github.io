@@ -1,9 +1,6 @@
 :root {
   --barColor: #e8e6e3;
   --backgroundColor: #181a1b;
-  --triangle-angle: 45deg;
-  --triangle-length: 37vw;
-  --aboude-width: none;
 }
 * {
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -53,74 +50,17 @@ i {
   color: #181a1b;
 }
 
-svg path{
+svg path {
   stroke: var(--barColor);
 }
 
 @media only screen and (min-width: 600px) {
-  *,
-  ::before,
-  ::after {
-    box-sizing: inherit;
-  }
-
-  main {
-    width: 100%;
-    height: 100%;
-  }
-  section {
-    margin: 0 auto;
-    max-width: 1000px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  section:first-child{
-    margin: 0;
-  }
-
-  #aboude{
-    margin: 0;
-  }
-
-  #aboude h1 {
-
-    font-size: clamp(40px, 8vw, 80px);
-    line-height: 1.1;
-    font-weight: 600;
-    margin: 0;
-  }
-
-  #aboude h2 {
-    margin-top: 10px;
-    font-size: clamp(30px, 7vw, 70px);
-    line-height: 0.9;
-    font-weight: 600;
-  }
-
-  #aboude p {
-    display: block;
-    margin: 20px 0px 0px;
-    max-width: 590px;
-    line-height: 1.3;
-  }
-
-  #balamand{
-    position: absolute;
-    right: 5%;
-    width: clamp(2px, 20vw, 275px);
-    opacity: 0;
-    /* transition: all 1s linear; */
-  }
-
   .links {
     display: inline-block;
     position: relative;
     color: var(--barColor);
     font-family: monospace;
+    font-size: 1.5vw;
     text-shadow: 0 0 5px var(--barColor);
     text-decoration: none;
   }
@@ -243,7 +183,7 @@ svg path{
   nav ul li {
     float: right;
     display: inline;
-    padding: 15px;
+    padding: 10px;
   }
 
   nav ul a {
@@ -275,6 +215,29 @@ svg path{
     content: '100 - ';
   }
 
+  section h1 {
+    text-transform: capitalize;
+  }
+
+  section h1::before {
+    color: var(--barColor);
+    font-family: monospace;
+    text-shadow: 0 0 5px var(--barColor);
+  }
+
+  section:nth-child(2) h1::before {
+    content: '001 - ';
+  }
+  section:nth-child(3) h1::before {
+    content: '010 - ';
+  }
+  section:nth-child(4) h1::before {
+    content: '011 - ';
+  }
+  section:nth-child(5) h1::before {
+    content: '100 - ';
+  }
+
   #wip {
     position: fixed;
     bottom: 0;
@@ -285,6 +248,89 @@ svg path{
     border-radius: 5px;
     user-select: none;
     font-family: monospace;
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+  }
+  section {
+    margin: 0 auto;
+    width: clamp(505.5px, 80%, 1090px);
+    height: 100%;
+    display: grid;
+    justify-items: start;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  #aboude {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  #aboude div h1 {
+    /* color: #e8e6e3; */
+    font-size: 5vw;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  #aboude div h2 {
+    margin-top: 10px;
+    font-size: 4vw;
+    line-height: 0.9;
+    font-weight: 600;
+  }
+
+  #aboude div p {
+    display: block;
+    margin: 20px 0px 0px;
+    max-width: 590px;
+    line-height: 1.3;
+    font-size: 1.5vw;
+  }
+
+  #img-me {
+  }
+
+  #skills #skillContain{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  #skills #skillContain div{
+    border: var(--barColor) 1px solid;    
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  #projContain {
+    display: flex;
+  }
+
+  card{
+    margin: 10px;
+    width: 20vw;
+    height: 25vw;
+    border-radius: 10px;
+    text-align: center;
+    border: var(--barColor) 2px solid;
+  }
+
+  card a{
+    text-decoration: none;
+    color: #e8e6e3;
+    width: 10px;
+  }
+
+  card a img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height:75%;
+    object-fit: cover;
   }
 }
 li:hover .fa-github-alt {

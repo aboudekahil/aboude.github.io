@@ -14,6 +14,7 @@ const getCssPropertyForRule = (rule, prop) => {
 };
 
 // icon color change
+let currentColor = '#e8e6e3';
 document.querySelectorAll('#contact-list > a > li').forEach((item) => {
   item.addEventListener('mouseenter', () => {
     let color = getCssPropertyForRule(
@@ -24,16 +25,22 @@ document.querySelectorAll('#contact-list > a > li').forEach((item) => {
   });
 
   item.addEventListener('mouseleave', () => {
-    document.querySelector(':root').style.setProperty('--barColor', '#e8e6e3');
+    document
+      .querySelector(':root')
+      .style.setProperty('--barColor', currentColor);
   });
 });
 
-document.querySelector('.links').addEventListener('mouseenter', () => {
-  document.querySelector('#balamand').style.opacity = 1;
-});
-
-document.querySelector('.links').addEventListener('mouseleave', () => {
-  document.querySelector('#balamand').style.opacity = 0;
+//svg logo
+let index = 0;
+document.querySelector('svg').addEventListener('click', () => {
+  let colors = ['#8f36b7', '#bb2ba2', '#0077b5', '#ea4335', '#e8e6e3'];
+  index *= !(index === 5);
+  document
+    .querySelector(':root')
+    .style.setProperty('--barColor', colors[index]);
+  currentColor = colors[index];
+  index += 1;
 });
 
 // wip
